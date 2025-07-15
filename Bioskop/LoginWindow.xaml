@@ -1,0 +1,10 @@
+﻿<Window x:Class="Bioskop.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Prijava" Height="200" Width="300">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Izaberite ulogu:" Margin="0,0,0,10" FontWeight="Bold" FontSize="16" />
+        <Button Content="Administrator" Click="BtnAdmin_Click" Margin="0,0,0,10" Width="150" />
+        <Button Content="Gledalac" Click="BtnKorisnik_Click" Width="150"/>
+    </StackPanel>
+</Window>

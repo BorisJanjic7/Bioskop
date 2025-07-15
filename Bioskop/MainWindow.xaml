@@ -1,0 +1,62 @@
+<Window x:Class="Bioskop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bioskop - Administrator" Height="500" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <StackPanel Margin="5">
+                <Label Content="Naziv Filma"/>
+                <TextBox x:Name="txtNaziv" Width="150"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Žanr"/>
+                <TextBox x:Name="txtZanr" Width="120"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Trajanje (min)"/>
+                <TextBox x:Name="txtTrajanje" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Godina"/>
+                <TextBox x:Name="txtGodina" Width="100"/>
+            </StackPanel>
+            <Button Content="Dodaj Film" Click="BtnDodajFilm_Click" Width="120" Height="40" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgFilmovi"
+                  Grid.Row="1"
+                  Margin="0,10,0,10"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  SelectionMode="Single"
+                  SelectionChanged="DgFilmovi_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="*"/>
+                <DataGridTextColumn Header="Žanr" Binding="{Binding Zanr}" Width="Auto"/>
+                <DataGridTextColumn Header="Trajanje (min)" Binding="{Binding Trajanje}" Width="Auto"/>
+                <DataGridTextColumn Header="Godina" Binding="{Binding Godina}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,10,0,0">
+            <TextBlock Text="Izaberite film iz gornje tabele pre dodavanja termina."
+                       VerticalAlignment="Center" Margin="0,0,20,0"/>
+            <StackPanel Margin="5">
+                <Label Content="Datum i vreme termina"/>
+                <TextBox x:Name="txtDatumVreme" Width="160"/>
+            </StackPanel>
+            <StackPanel Margin="5">
+                <Label Content="Sala"/>
+                <TextBox x:Name="txtSala" Width="100"/>
+            </StackPanel>
+            <Button Content="Dodaj Termin za Izabrani Film" Click="BtnDodajTermin_Click" Width="200" Height="40" Margin="10,10,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
